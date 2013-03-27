@@ -1,0 +1,115 @@
+package test;
+public class GridMap {
+	
+	//	This creates the initial map and assigns each coordinate with a value of 0
+	//	The player will have a value of 1, so it is possible to keep track of the
+	//	constantly changing position of the player, and the player's initial position is also
+	//	added to the grid here.
+	//	This also creates a fence-post around the edges of the entire map in order to avoid
+	//	any possible run time errors when accidentally moving out of the grid.
+	public static int[][] grid_create(int size_x, int size_y, int start_x, int start_y) {
+		int[][] grid = new int[size_y][size_x];
+		for (int i = 0; i < size_y; i++) {
+			for (int j = 0; j < size_x; j++) {
+				if (i == start_x && j == start_y) {
+					grid[start_x][start_y] = 1;
+				} else {
+					grid[i][j] = 0;
+				}
+				if (i == 0 || j == 0 || i == size_y-1 || j == size_x-1) {
+					grid[i][j] = 9;
+				}
+			}
+		}
+		return grid;
+	}
+	
+	//	This function handles the players movement and also calls move_possible to check
+	//	if a move is possible to avoid any mistakes like accidentally teleporting to the 
+	//	other side of the map.
+	//	Another interesting attribute of this function is that it detects whether or not the
+	//	area of the map that the player wants to move into is a building, and if it is, it
+	//	then calls the Building class and the corresponding building which the player is trying
+	//	to enter. However, this does not as of yet check exactly which building the player
+	//	has actually entered, so at the moment only one building, ie appleton tower can be
+	//	catered for.
+	//	This could be changed by assigning a different number to each building in the
+	// 	create_object function, but again, this would be slightly more complicated.
+	//	EDIT - I added the find_pos function, so the player's original position is now deleted
+	//	from within the move_pos function, which is much safer and more efficient.
+	public static int[][] move_pos(int[][] grid, int x, int y) {
+		//if (move_possible(grid,x,y)) {
+			
+			if (grid[x][y] != 0) {
+				Building.check_building(grid[x][y]);
+			} else {
+				grid[player_pos(grid)[0]][player_pos(grid)[1]] = 0;
+				grid[x][y] = 1;
+			}
+		//}
+		return grid;
+	}
+	
+	//	This function checks whether or not a player movement is possible and also deletes the players
+	//	last position. This is perhaps a little bit messy, as you will need to be very careful that
+	//	when you call this function, you also call move_pos, otherwise the player will be deleted
+	//	from the map. Diagonal movements have currently been disallowed, but this could be changed
+	//	although this would potentially be a little more difficult to implement in terms of reading
+	//	player movements.
+	//	I also decided to make this function private as a result of this, as it could be dangerous
+	//	if misused, so it can only be called from within this class.
+	//	EDIT - I altered this function and added the find_pos function, so this is no longer
+	//	a potential danger to the player or the map.
+	
+	/*private static boolean move_possible(int[][] grid, int new_x, int new_y) {
+		if (grid[new_x-1][new_y] == 1 || grid[new_x+1][new_y] == 1 || grid[new_x][new_y-1] == 1 || grid[new_x][new_y+1] == 1) {
+			return true;
+		}
+		return false;
+	}*/
+	
+	//	This is for creating buildings or other large scale objects on the map. Currently, it only
+	//	allows for square or rectangular objects to be created, although this could be worked
+	//	around by creating two objects next to each other for example.
+	//	Currently, the value 2 is assigned to the area which the building is at, but again,
+	//	this could be changed in order to identify with other objects and buildings.
+	public static int[][] create_object(int[][] grid, int x1, int y1, int x2, int y2, int building_code) {
+		for (int i = x1; i <= x2; i++) {
+			for (int j = y1; j <= y2; j++) {
+				grid[i][j] = building_code;
+			}
+		}
+		return grid;
+	}
+	
+	//	This function finds and returns the players current position on the map, and this is very
+	// 	useful as you can imagine. Originally, I didn't keep a track of the position of the player
+	//	relative to the grid, but this was a bit inefficient and dangerous as I was deleting the 
+	//	player's last position before he moved off the map from within the move_possible function.
+	public static int[] player_pos(int[][] grid) {
+		int x = 0;
+		int y = 0;
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 8; j++) {
+				if (grid[i][j] == 1) {
+					x = i;
+					y = j;
+				}
+			}
+		}
+		return new int[] {x,y};
+	}
+	
+	//	This is just a main method for testing the functions in the GridMap class
+	//	Ideally, I would much prefer to handle player input in another class to make
+	//	everything a bit more readable.
+	public static void main (String[] args) {
+		
+		for (int i = 0; i < 15; i++) {
+			for (int j = 0; j < 15; j++) {
+				System.out.print(CreateMap.edinburgh()[i][j]);
+			}
+			System.out.println();
+		}
+	}
+}
