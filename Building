@@ -1,0 +1,65 @@
+package test;
+public class Building {
+	
+	public static String check_building (int value) {
+		//	This function could be used to check which building the player is attempting to enter
+		//	and the call the corresponding building for the player to interact with.
+		
+		if (value == 2) {
+			appleton();
+                        return "have reached Hugh Robson Building";
+		}
+		if (value == 3) {
+			hume();
+                        return "have reached Teviot ";
+		}
+		if (value == 4) {
+			inf();
+                        return "have reached The Informatics Forum";
+		}
+		if (value == 5) {
+			potterrow();
+                        return "have reached Appleton Tower";
+		}
+		if (value == 6) {
+			teviot();
+                        return "have reached David Hume Tower";
+		}
+                if (value == 7) {
+			teviot();
+                        return "have reached The Library";
+		}
+                if (value == 8) {
+			teviot();
+                        return "have reached George Square Lecture Theatre";
+		}
+		if (value == 10) {
+			teviot();
+                        return "have reached The Business School";
+		}
+                
+                if (value == 9) {
+			
+                        return "cannot exit the map!";
+			// After telling the user that they can't go off the map, we must return to the user input stage.
+		}
+                return "";
+	}
+	
+	
+	public static void appleton () {
+          //  NewJFrame.OutputBox.append("You have reavjecfs");
+		/*	Interact with appleton tower building, for example accomplish some task
+			or possibly create another grid within the building to make it possible
+			to move about in the building.
+		*/
+	}
+	public static void hume() {
+	}
+	public static void inf() {
+	}
+	public static void potterrow() {
+	}
+	public static void teviot() {
+	}
+}
