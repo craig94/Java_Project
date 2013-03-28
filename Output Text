@@ -1,0 +1,383 @@
+package test;
+
+public class OutputText
+{
+    // NOTE: THERE MUST BE NO NULL OBJECT IN THE ARRAY OR THIS WILL NOT WORK!
+
+    public static boolean in_inventory(Items[] x, String y) {
+
+        for (int i = 0; i < x.length; i++) {
+            if (x[i].getName().equals(y) && x[i].getAcquired()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+ //  private String text;
+ //  private int index;
+   
+ //  public AppletonText(String text, int index)
+ //  {
+  //     this.index = index;
+  //     this.text = text;
+   //}
+   
+   
+      public static void Appleton(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 3) && (!(in_inventory(x, "key_h")))) {
+           NewJFrame.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           NewJFrame.index--;
+           p--;
+       } 
+       else if (p == 3 && (in_inventory(x, "key_h"))) {
+           NewJFrame.OutputBox.append("\nYou have the key for level 1 of the Hugh Robson Building!\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           NewJFrame.OutputBox.append("You have entered Hugh Robson" + "\n");
+       }
+       else if (p  == 2)
+       {
+           NewJFrame.OutputBox.append("You have reached the Stairs" + "\n");
+       }
+       else if (p  == 3)
+       {
+           NewJFrame.OutputBox.append("You have reached the first floor" + "\n");
+       }
+       else if (p == 4)
+       {
+           NewJFrame.OutputBox.append("You have reached the second floor" + "\n");
+       }
+       else if (p == 5)
+       {
+           NewJFrame.OutputBox.append("You have reached the third floor" + "\n");
+       }
+       else if (p == 6)
+       {
+           NewJFrame.OutputBox.append("The way is blocked, you must move back" + "\n");   
+       }
+     
+       
+   }
+      public static void HughRobson(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 3) && (!(in_inventory(x, "key_h")))) {
+           NewJFrame.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           NewJFrame.index--;
+           p--;
+       } 
+       else if (p == 3 && (in_inventory(x, "key_h"))) {
+           NewJFrame.OutputBox.append("\nYou have the key for level 1 of the Hugh Robson Building!\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           NewJFrame.OutputBox.append("You have entered Hugh Robson" + "\n");
+       }
+       else if (p  == 2)
+       {
+           NewJFrame.OutputBox.append("You have reached the Stairs" + "\n");
+       }
+       else if (p  == 3)
+       {
+           NewJFrame.OutputBox.append("You have reached the first floor" + "\n");
+       }
+       else if (p == 4)
+       {
+           NewJFrame.OutputBox.append("You have reached the second floor" + "\n");
+       }
+       else if (p == 5)
+       {
+           NewJFrame.OutputBox.append("You have reached the third floor" + "\n");
+       }
+       else if (p == 6)
+       {
+           NewJFrame.OutputBox.append("The way is blocked, you must move back" + "\n");   
+       }
+     
+       
+   }
+      public static void Teviot(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 2) && (!(in_inventory(x, "key_h")))) {
+           NewJFrame.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           NewJFrame.index--;
+           p--;
+       } 
+       else if (p == 2 && (in_inventory(x, "key_h"))) {
+           NewJFrame.OutputBox.append("\nYou have the key for level 1 of the Hugh Robson Building!\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           NewJFrame.OutputBox.append("You have entered Hugh Robson" + "\n");
+       }
+       else if (p  == 2)
+       {
+           NewJFrame.OutputBox.append("You have reached the Stairs" + "\n");
+       }
+       else if (p  == 3)
+       {
+           NewJFrame.OutputBox.append("You have reached the first floor" + "\n");
+       }
+       else if (p == 4)
+       {
+           NewJFrame.OutputBox.append("You have reached the second floor" + "\n");
+       }
+       else if (p == 5)
+       {
+           NewJFrame.OutputBox.append("You have reached the third floor" + "\n");
+       }
+       else if (p == 6)
+       {
+           NewJFrame.OutputBox.append("The way is blocked, you must move back" + "\n");   
+       }
+     
+       
+   }
+                  public static void Library(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 3) && (!(in_inventory(x, "key_h")))) {
+           NewJFrame.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           NewJFrame.index--;
+           p--;
+       } 
+       else if (p == 3 && (in_inventory(x, "key_h"))) {
+           NewJFrame.OutputBox.append("\nYou have the key for level 1 of the Hugh Robson Building!\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           NewJFrame.OutputBox.append("You have entered Hugh Robson" + "\n");
+       }
+       else if (p  == 2)
+       {
+           NewJFrame.OutputBox.append("You have reached the Stairs" + "\n");
+       }
+       else if (p  == 3)
+       {
+           NewJFrame.OutputBox.append("You have reached the first floor" + "\n");
+       }
+       else if (p == 4)
+       {
+           NewJFrame.OutputBox.append("You have reached the second floor" + "\n");
+       }
+       else if (p == 5)
+       {
+           NewJFrame.OutputBox.append("You have reached the third floor" + "\n");
+       }
+       else if (p == 6)
+       {
+           NewJFrame.OutputBox.append("The way is blocked, you must move back" + "\n");   
+       }
+     
+       
+   }
+       public static void IF(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 3) && (!(in_inventory(x, "key_h")))) {
+           NewJFrame.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           NewJFrame.index--;
+           p--;
+       } 
+       else if (p == 3 && (in_inventory(x, "key_h"))) {
+           NewJFrame.OutputBox.append("\nYou have the key for level 1 of the Hugh Robson Building!\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           NewJFrame.OutputBox.append("You have entered Hugh Robson" + "\n");
+       }
+       else if (p  == 2)
+       {
+           NewJFrame.OutputBox.append("You have reached the Stairs" + "\n");
+       }
+       else if (p  == 3)
+       {
+           NewJFrame.OutputBox.append("You have reached the first floor" + "\n");
+       }
+       else if (p == 4)
+       {
+           NewJFrame.OutputBox.append("You have reached the second floor" + "\n");
+       }
+       else if (p == 5)
+       {
+           NewJFrame.OutputBox.append("You have reached the third floor" + "\n");
+       }
+       else if (p == 6)
+       {
+           NewJFrame.OutputBox.append("The way is blocked, you must move back" + "\n");   
+       }
+     
+       
+   }
+                        public static void David(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 3) && (!(in_inventory(x, "key_h")))) {
+           NewJFrame.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           NewJFrame.index--;
+           p--;
+       } 
+       else if (p == 3 && (in_inventory(x, "key_h"))) {
+           NewJFrame.OutputBox.append("\nYou have the key for level 1 of the Hugh Robson Building!\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           NewJFrame.OutputBox.append("You have entered Hugh Robson" + "\n");
+       }
+       else if (p  == 2)
+       {
+           NewJFrame.OutputBox.append("You have reached the Stairs" + "\n");
+       }
+       else if (p  == 3)
+       {
+           NewJFrame.OutputBox.append("You have reached the first floor" + "\n");
+       }
+       else if (p == 4)
+       {
+           NewJFrame.OutputBox.append("You have reached the second floor" + "\n");
+       }
+       else if (p == 5)
+       {
+           NewJFrame.OutputBox.append("You have reached the third floor" + "\n");
+       }
+       else if (p == 6)
+       {
+           NewJFrame.OutputBox.append("The way is blocked, you must move back" + "\n");   
+       }
+     
+       
+   }
+   
+            public static void Bus(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 3) && (!(in_inventory(x, "key_h")))) {
+           NewJFrame.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           NewJFrame.index--;
+           p--;
+       } 
+       else if (p == 3 && (in_inventory(x, "key_h"))) {
+           NewJFrame.OutputBox.append("\nYou have the key for level 1 of the Hugh Robson Building!\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           NewJFrame.OutputBox.append("You have entered Hugh Robson" + "\n");
+       }
+       else if (p  == 2)
+       {
+           NewJFrame.OutputBox.append("You have reached the Stairs" + "\n");
+       }
+       else if (p  == 3)
+       {
+           NewJFrame.OutputBox.append("You have reached the first floor" + "\n");
+       }
+       else if (p == 4)
+       {
+           NewJFrame.OutputBox.append("You have reached the second floor" + "\n");
+       }
+       else if (p == 5)
+       {
+           NewJFrame.OutputBox.append("You have reached the third floor" + "\n");
+       }
+       else if (p == 6)
+       {
+           NewJFrame.OutputBox.append("The way is blocked, you must move back" + "\n");   
+       }
+     
+       
+   }
+               public static void GSLT(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 3) && (!(in_inventory(x, "key_h")))) {
+           NewJFrame.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           NewJFrame.index--;
+           p--;
+       } 
+       else if (p == 3 && (in_inventory(x, "key_h"))) {
+           NewJFrame.OutputBox.append("\nYou have the key for level 1 of the Hugh Robson Building!\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           NewJFrame.OutputBox.append("You have entered Hugh Robson" + "\n");
+       }
+       else if (p  == 2)
+       {
+           NewJFrame.OutputBox.append("You have reached the Stairs" + "\n");
+       }
+       else if (p  == 3)
+       {
+           NewJFrame.OutputBox.append("You have reached the first floor" + "\n");
+       }
+       else if (p == 4)
+       {
+           NewJFrame.OutputBox.append("You have reached the second floor" + "\n");
+       }
+       else if (p == 5)
+       {
+           NewJFrame.OutputBox.append("You have reached the third floor" + "\n");
+       }
+       else if (p == 6)
+       {
+           NewJFrame.OutputBox.append("The way is blocked, you must move back" + "\n");   
+       }
+     
+       
+   }
+   
+         
+}
+   
