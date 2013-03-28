@@ -1,0 +1,17 @@
+  public static boolean checkSpace() {
+		int i = 6;
+
+		boolean[] backpack = new boolean [i];
+
+		for(int x = 0; x < 5; x++){
+			backpack[x] = false;
+		}
+
+		for(int x = 0; x < i; x++){
+			if(backpack[x] == true){
+				return true;
+			}
+
+		}
+		return false;
+	}
