@@ -1,0 +1,12 @@
+import java.util.HashMap;
+
+public class Inventory {
+  private HashMap<String, Items> items;
+	private int size;
+
+	public Inventory (int newSize) {
+		size = newSize;
+		items = new HashMap<String, Items>();
+	}
+	public boolean checkForItem (String itemName) {
+		return items.containsKey(itemName);
