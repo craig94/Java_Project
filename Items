@@ -1,0 +1,237 @@
+
+
+
+public class Items {
+  
+	// LINE BELOW THIS WAS FOR TESTING ? 
+	
+	private int[][] grid = CreateMap.edinburgh();
+
+	private String name;
+	private String description;
+	private String useOutput;
+	private boolean available;
+	private boolean acquired;
+	private int x;
+	private int y;
+	private int building;
+	private int index;
+	
+	
+	private int no = 2;
+	
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	
+	public Items(String name, String description, String useOutput, boolean available, boolean acquired, int x, int y, int building, int index) {
+		this.name = name;//random key value
+		this.description = description;
+		this.useOutput = useOutput;
+		this.available = available;
+		this.acquired = acquired;
+		this.x = x;
+		this.y = y;
+		this.building = building;
+		this.index = index;
+		
+	}
+///////////////////// ONLY GETTERS /////////////////////////////////////////
+	
+	public String getName() {
+		return name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public String getUse() {
+		
+		return useOutput;
+	}
+	
+/////////////////// GET SET BUILDING NUMBER ///////////////////////////////////
+	
+	public int getBuilding() {
+		
+		return building;
+	}
+	
+	public void setBuilding(int buid) {
+		
+		building = buid;
+	}
+	
+/////////////////////  GET SET ACQUIRED BOOLEAN   EG IF ITS IN INVENTORY? LINK TO ANDREWS CODE //////////////////////////////////////	
+	
+	public boolean getAcquired() {
+		
+		return acquired;
+	}
+	
+	public void setAcquireded(boolean acq) {
+		
+		acquired = acq;
+		
+	}
+	
+/////////////////    GET SET INDEX INT  //////////////////////////////////////////
+	
+	public int getIndex() {
+		
+		return index;
+	}
+	
+	public void setIndex(int in) {
+		
+		index = in;
+		
+	}
+
+//////////////         GET SET X INT  (X CO-ORD WHERE ITEM IS AVAILABLE)         //////////////////////////
+	
+	
+	
+	public int getX(){
+		return x;
+	}
+	
+	public void setX(int x) {
+		
+		this.x = x;
+	}
+
+///////////         GET SET Y INT     (Y CO-ORD WHERE ITEM IS AVAILABLE)     ////////////////////
+	
+	public int getY() {
+	
+		return y;
+	}
+
+
+		public void setY(int y) {
+		
+		this.y = y;
+	}
+	
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+		//  THIS RETURNS BOOLEAN TO SEE IF ITEM CAN BE EITHER FOUND BY LOOK OR PICKED UP
+		// IF PLAYER IS IN THE CORRECT POSITION.
+	
+	
+	public boolean getAvailable(int buildingNo, int level) {              // buildingNo = building , level = level of building
+	
+		if(getBuilding() == 0) {
+			
+
+		if( ( getX() == (GridMap.player_pos(grid)[0] - 1) ) && ( getY() == GridMap.player_pos(grid)[1] - 1) ) {
+			
+			return true; //because the player is standing on place with the item on it
+	}
+		
+		else {
+			return false;
+		}
+		
+	}
+		// code for objects inside a building.
+		else {
+			if( (buildingNo == getBuilding() ) && (level == getIndex()) ) {
+				
+				return true;
+			}
+			else {
+				return false;
+			}
+			
+		}
+
+	}
+	// how this could work? have a list of items and cycle through all of them and do .getAvailable for them all.
+	
+	
+	
+	
+	// LIST OF ITEMS TO BE CREATED. - once we decide more on plot I can tie more item stuff to plot and create more stuff.
+	
+	
+//FORMAT	public Items(String name, String description, String useOuput, boolean available, int x, int y, int building, int index)
+
+	// HAVE EVERYTIME THE USE BUTTON IS CLICKED THAT IT CALLS MY useOutput method to display the text once its used.
+	
+	
+//	Items key1 = new Items("Master KEY", "A unique key forged in the darkest corner of the earth that can be used to
+//	open any door.", "You used the Master key to unlock the door - the door is now unlocked. (code to set door boolean to true or
+// something)", false, x, y building int, index int);
+	
+	
+//  Items crowBar = new Items("Crowbar", "Could be used to bust open some doors - probably anydoor...", "You used the crowbar to 
+// bust open the door. The door is no longer locked.", false, int x, int y, int building, int index)
+//
+	
+	// use the item below to end game eg extraction?
+	
+//// Items flareGun = new Items("Flare gun", "A small firearm thats loaded to shoot a flare - better save this for when the time is right to use this!", "You pulled the trigger and shot the flare into the dark sky - its 
+	// intense bright light soars and lights up the area above you." , " false, int x, int y, int building, int index)
+//	
+//	
+////JUNK ITEMS
+//	
+//	
+//	Items newspaper = new Items("Newspaper","Last weeks newspaper.","You read through the paper and found out 
+	// a week ago extra-terrestrial beings invaded earth and their intentions are unknown.", false, x, y, building int, index int);
+	
+// Items phone = new Items("Mobile phone", " A brick and a half of a phone - looks scratched but still usable.", "You tried to use the phone although there is some
+// it to call (story line) but there is interference affecting its signal!", false, int x, int y, int building, int index)
+	
+
+	
+	
+//	Items creditCard = new Items("Credit Card","Somebody must of lost this.", "AIN'T NOBODY GOT TIME TO USE A CREDIT CARD IN THIS
+	// SITUATION, YOU 'BOUT TO DIE FOOL!" false, false, x,y, building int, int index);
+	
+	
+//
+//
+//	
+//	
+//	// One time consumables - Andrews job to find a way to delete it once used.
+//	
+//	Items crisps = new Items("Crisps", "A tasty looking packet of crisps.", "You ate the crisps... Damn they tasted good, just what
+//	you needed after waking up.", false, false, x,y, building int, index int)
+	
+	
+//	Items beer = new Items("Beer", "A cold bottle of refreshing beer.","You drank the beer and feel awesomely revitalised!", false, x,y, );
+//	
+	
+
+	
+
+	
+	
+	
+
+
+
+
+
+	// something to pick up item and add it to inventory
+	// code to drop item
+	// code to use it depending on type of item.0
+
+}
