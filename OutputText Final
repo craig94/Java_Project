@@ -1,0 +1,327 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Adventure;
+
+/**
+ *
+ * @author s1126353
+ */
+public class OutputText {
+    
+    // NOTE: THERE MUST BE NO NULL OBJECT IN THE ARRAY OR THIS WILL NOT WORK!
+
+    public static boolean in_inventory(Items[] x, String y) {
+
+        for (int i = 0; i < x.length; i++) {
+            if (x[i].getName().equals(y) && x[i].getAcquired()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+ //  private String text;
+ //  private int index;
+   
+ //  public AppletonText(String text, int index)
+ //  {
+  //     this.index = index;
+  //     this.text = text;
+   //}
+   
+   
+      public static void Appleton(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 4) && (!(in_inventory(x, "key_a")))) {
+           GUI.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           GUI.index--;
+           p--;
+       } 
+       else if (p == 4 && (in_inventory(x, "key_a"))) {
+           GUI.OutputBox.append("\nYou have the key to enter the second floor of Appleton Tower!\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           GUI.OutputBox.append("You have entered Appleton Tower\nThe first thing you notice is that the ground floor appears to have been completely overrun by rodents and other wild animals, but your presence seems to have scared them off\nThe Absorb cafe has been wrecked and for once you feel thankful that a zombie invasion has happened as you won't have to taste the awful food ever again" + "\n");
+       }
+       else if (p == 2)
+       {
+           GUI.OutputBox.append("You have reached the Stairs" + "\n");
+       }
+       else if (p == 3)
+       {
+           GUI.OutputBox.append("You have reached the first floor\nYou see the entrances to various lecture theatres and are thankful that you will never have to any more Data and Analysis lectures ever again" + "\n");
+       }
+       else if (p == 4)
+       {
+           GUI.OutputBox.append("You have reached the second floor\nYou notice a vending machine next to the door\nIt also looks like there is an office at the end of the hallway with a selection of keys in it" + "\n");
+	   //look around and pickup another key
+       }
+       else if (p == 5)
+       {
+           GUI.OutputBox.append("The way is blocked, you must move back" + "\n");
+	   GUI.index--;
+       }
+     
+       
+   }
+      public static void HughRobson(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 1) && (!(in_inventory(x, "key_h")))) {
+           GUI.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           GUI.index--;
+           p--;
+       } 
+       else if (p == 1 && (in_inventory(x, "key_h"))) {
+           GUI.OutputBox.append("\nYou have the key to enter the Hugh Robson Building!\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           GUI.OutputBox.append("You have entered the Hugh Robson building\nYou notice that the building appears to be empty and see no signs of movement\nThe room is dark and smells damp and moulding" + "\n");
+       }
+       else if (p == 2)
+       {
+           GUI.OutputBox.append("You have reached the Stairs\nYou manoeuvre your way past various chairs and desk that have been hewn around the staircase\nYou also notice a crowbar lying on the ground" + "\n");
+       }
+       else if (p == 3)
+       {
+           GUI.OutputBox.append("You have reached the first floor\nA noise comes from behind a door, you investigate and a zombie attacks" + "\n");
+	   GUI.item_use = true;
+           GUI.useItemPressed = false;
+           //if the use button is pressed and the user has the crowbar in the inventory, then kill the zombie
+       }
+       else if (p == 4)
+       {
+           GUI.OutputBox.append("You have reached the second floor\nThis floor looks like some kind of computing suite and has been completely wrecked\nIt looks like there are no zombies around on this floor though" + "\n");
+       }
+       else if (p == 5)
+       {
+           GUI.OutputBox.append("You have reached the third floor\nIt looks like there is an office at the end of the hallway which could have some useful objects in it" + "\n");
+	   //look around and pickup key for another building etc
+       }
+       else if (p == 6)
+       {
+           GUI.OutputBox.append("The way is blocked, you must move back" + "\n");   
+       }
+     
+       
+   }
+      public static void Teviot(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 1) && (!(in_inventory(x, "key_teviot")))) {
+           GUI.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           GUI.index--;
+           p--;
+       } 
+       else if (p == 1 && (in_inventory(x, "key_teviot"))) {
+           GUI.OutputBox.append("\nYou have the key for Teviot!\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           GUI.OutputBox.append("\nYou have entered Teviot\nYou explore the ground floor and notice that the library bar\nstill appears to be usable\nYou stop for a moment and grap a pint of beer from the bar\nMmh...Refreshing..." + "\n");
+       }
+       else if (p == 2)
+       {
+           GUI.OutputBox.append("You have reached the Loft bar\nThere is a newspaper lying on a table, could be an interesting read..." + "\n");
+       }
+       else if (p == 3)
+       {
+           GUI.OutputBox.append("The way is blocked, you must move back" + "\n");
+	   GUI.index--;
+       }
+     
+       
+   }
+                  public static void Library(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 1) && (!(in_inventory(x, "key_library")))) {
+           GUI.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           GUI.index--;
+           p--;
+       } 
+       else if (p == 1 && (in_inventory(x, "key_library"))) {
+           GUI.OutputBox.append("\nYou have the key to the Library\nYou Open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           GUI.OutputBox.append("You have entered The Library" + "\n");
+       }
+       else if (p  == 2)
+       {
+           GUI.OutputBox.append("You have reached the first floor\nYou see blood smeared on the windows and and office at the far end of the room, might be worth a look" + "\n");
+       }
+       else if (p == 3)
+       {
+           GUI.OutputBox.append("The way is blocked, you must move back" + "\n");   
+           GUI.index--;
+       }
+     
+       
+   }
+       public static void IF(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 1) && (!(in_inventory(x, "KeyCard")))) {
+           GUI.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           GUI.index--;
+           p--;
+       } 
+       else if (p == 1 && (in_inventory(x, "KeyCard"))) {
+           GUI.OutputBox.append("\nYYou have the KeyCard for the Informatics Forum\nYou open the door\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           GUI.OutputBox.append("You have entered the Informatics Forum" + "\n");
+       }
+       else if (p  == 2)
+       {
+           GUI.OutputBox.append("You have reached the first floor\nYou see a flare gun lying on the ground\nThis could be used to signal a rescue from a helicopter\nThis would need to be fired from the highest place in the area in order to be noticed" + "\n");
+       }
+       else if (p == 3)
+       {
+           GUI.OutputBox.append("The way is blocked, you must move back" + "\n");   
+           GUI.index--;
+       }
+     
+       
+   }
+                        public static void David(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 5) && (!(in_inventory(x, "key_hume")))) {
+           GUI.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\n");
+           GUI.index--;
+           p--;
+       } 
+       else if (p == 5 && (in_inventory(x, "key_hume"))) {
+           GUI.OutputBox.append("\nYou have the key to the David Hume Tower\nYou unlock the door using the key\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           GUI.OutputBox.append("You have entered the David Hume Tower" + "\n");
+       }
+       else if (p  == 2)
+       {
+           GUI.OutputBox.append("You have reached the Stairs" + "\n");
+       }
+       else if (p  == 3)
+       {
+           GUI.OutputBox.append("You have reached the first floor" + "\n");
+       }
+       else if (p == 4)
+       {
+           GUI.OutputBox.append("You have reached the second floor" + "\n");
+       }
+       else if (p == 5)
+       {
+           GUI.OutputBox.append("You have reached the third floor" + "\n");
+       }
+       else if (p == 6)
+       {
+           GUI.OutputBox.append("You have reached the roof and you can see a helicopter in the distance\nYou try and wave to him but he cannot see you from so far away\nThere must ba another way to signal him..." + "\n");   
+       	   GUI.item_use = true;
+           GUI.useItemPressed = false;
+       }
+     
+       
+   }
+   
+            public static void Bus(int i, Items[] x)
+   {
+       
+       int p = i;
+               
+       if (p == 1)
+       {
+           GUI.OutputBox.append("You have entered The business school" + "\n");
+       }
+       if (p == 2)
+       {
+           GUI.OutputBox.append("There are some objects lying around on the floor which might be useful" + "\n");
+       }
+       else if (p == 3)
+       {
+           GUI.OutputBox.append("The way is blocked, you must move back" + "\n");   
+           GUI.index--;
+       }
+     
+       
+   }
+               public static void GSLT(int i, Items[] x)
+   {
+       
+       int p = i;
+       
+       if ((p == 1) && (!(in_inventory(x, "Crowbar")))) {
+           GUI.OutputBox.append("\nThere is a locked door in front of you\nYou do not have the key!\nBut the door doesn't look very strong, you could probably get through with bashing it down with something metal...\n");
+           GUI.index--;
+           p--;
+       } 
+       else if (p == 1 && (in_inventory(x, "Crowbar"))) {
+           GUI.OutputBox.append("\nYou bash down the door of the building with the Crowbar\n");
+       }
+       
+           
+       
+       
+       if (p == 1)
+       {
+           GUI.OutputBox.append("You have entered The George Square Lecture Theatre. \nIt is dark and the lights are not working.\n You hear some disturbing noises  in the corner of the room. You can hear something creeping up on you. You aren't sure what exactly it is. You can attack or move on quickly\nWHAT DO YOU DO?" + "\n");
+       	   GUI.item_use = true;
+       }
+       if (p == 2)
+       {
+           GUI.OutputBox.append("There doesn't appear to be anything of interest as the lecture theatre, but you could look around" + "\n");
+       }
+       else if (p == 3)
+       {
+           GUI.OutputBox.append("The way is blocked, you must move back" + "\n");   
+           GUI.index--;
+       }
+     
+       
+   }
+    
+}
