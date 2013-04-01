@@ -1,0 +1,28 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Adventure;
+
+/**
+ *
+ * @author s1126353
+ */
+public class CreateMap {
+    
+    
+	public static int[][] edinburgh() {
+		int[][] grid_edin = new int[8][10];
+		grid_edin = GridMap.grid_create(8, 10, 5, 3); // Initialise and create map
+		grid_edin = GridMap.create_object(grid_edin, 1, 1, 1, 3, 2); 	// Hugh Robson Building
+		grid_edin = GridMap.create_object(grid_edin, 1, 4, 1, 4, 3); 	// Teviot
+		grid_edin = GridMap.create_object(grid_edin, 1, 6, 1, 6, 4); 	// Inf	
+		grid_edin = GridMap.create_object(grid_edin, 3, 6, 4, 6, 5); 	// 	Appleton Tower
+		grid_edin = GridMap.create_object(grid_edin, 5, 6, 6, 6, 6); 	// David Hume Tower
+		grid_edin = GridMap.create_object(grid_edin, 8, 2, 8, 3, 7); 	// Library
+		grid_edin = GridMap.create_object(grid_edin, 8, 4, 8, 4, 8); 	// GSLT
+		grid_edin = GridMap.create_object(grid_edin, 8, 5, 8, 5, 10); 	// Business School		
+		return grid_edin;
+	}
+    
+}
